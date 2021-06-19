@@ -8,7 +8,6 @@ import socket
 from urllib.parse import urlparse
 import random
 import ipaddress
-import subprocess
 
 logging.basicConfig(filename='info.log', level=logging.INFO, datefmt='%H:%M:%S', format='%(asctime)s %(levelname)s: %(message)s')
 peer_id = b'-qB4170-t-FvepUJaWBf'
