@@ -29,8 +29,12 @@ def scan_start(addresses, completed, path):
                     scans_new.append(scan)
             scans = scans_new
             scans_new = []
-    logging.info('all scans finished')
-
+    for scan in scans:
+        if scan.wait():
+            logging.info('completed scan: {}'.format(scan.args[7]))
+            with open(path, 'a') as f:
+                f.write(scan.args[7])
+                f.write('\n')
 
 def parse_addresses(path, completed):
     with open(path) as f:
